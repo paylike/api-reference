@@ -1,0 +1,16 @@
+# Status codes
+
+These status codes are used in [API responses](readme.md#response).
+
+{{#each responses}}
+- [{{{code}}}](#{{{codeLower}}})
+{{/each}}
+{{#each responses}}
+
+## `{{{code}}}`
+
+{{{description}}}
+
+{{#if httpStatusCode}}HTTP status code: {{{httpStatusCode}}}{{/if}}{{#if message}}
+Message: {{{message}}}{{/if}}
+{{/each}}

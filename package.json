@@ -1,0 +1,15 @@
+{
+  "name": "@paylike/api-reference",
+  "version": "1.0.0",
+  "repository": "paylike/api-reference",
+  "main": "lib",
+  "scripts": {
+    "build": "node lib/render-status-codes.js"
+  },
+  "devDependencies": {
+    "csv-parser": "^1.12.1",
+    "handlebars": "^4.0.11",
+    "pull-stream": "^3.6.8",
+    "stream-to-pull-stream": "^1.7.2"
+  }
+}
