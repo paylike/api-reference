@@ -9,7 +9,8 @@ Reference documentation
   - [Request (data)](#request-data)
   - [Response](#response)
 - [Services](#services)
-  - [Vault](#Vault)
+  - [Vault](./vault)
+  - [Apple Pay](./apple-pay)
 - [Specific status codes](#specific-status-codes)
 
 ## Basics
@@ -28,7 +29,7 @@ curl --header 'Accept-Version: 1'
 
 ### Request (data)
 
-Any request with a body *must* carry a header of `Content-Type: application/json`.
+Any request with a body _must_ carry a header of `Content-Type: application/json`.
 
 ```sh
 curl --header 'Content-Type: application/json' --data '{"key": "value"}'
@@ -55,6 +56,7 @@ Data returned in the body is formatted as one of:
 ## Services
 
 - [Vault](./vault.md)
+- [Apple Pay](./apple-pay.md)
 
 ## Specific status codes
 
