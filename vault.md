@@ -38,12 +38,12 @@ POST /
 
 ### Status codes
 
-- [INTERNAL_ERROR](../status-codes.md#internal_error)
-- [ENDPOINT_NOT_FOUND](../status-codes.md#endpoint_not_found)
-- [VERSION_MISSING](../status-codes.md#version_missing)
-- [VERSION_UNSUPPORTED](../status-codes.md#version_unsupported)
-- [BODY_INVALID](../status-codes.md#body_invalid)
-- [VAULT_VALUE_TYPE_INVALID](../status-codes.md#vault_value_type_invalid)
-- [VAULT_VALUE_PCN_INVALID](../status-codes.md#vault_value_pcn_invalid)
-- [VAULT_VALUE_PCSC_INVALID](../status-codes.md#vault_value_pcsc_invalid)
-- [VAULT_VALUE_TDSPARES_INVALID](../status-codes.md#vault_value_tdspares_invalid)
+- [INTERNAL_ERROR](./status-codes.md#internal_error)
+- [ENDPOINT_NOT_FOUND](./status-codes.md#endpoint_not_found)
+- [VERSION_MISSING](./status-codes.md#version_missing)
+- [VERSION_UNSUPPORTED](./status-codes.md#version_unsupported)
+- [BODY_INVALID](./status-codes.md#body_invalid)
+- [VAULT_VALUE_TYPE_INVALID](./status-codes.md#vault_value_type_invalid)
+- [VAULT_VALUE_PCN_INVALID](./status-codes.md#vault_value_pcn_invalid)
+- [VAULT_VALUE_PCSC_INVALID](./status-codes.md#vault_value_pcsc_invalid)
+- [VAULT_VALUE_TDSPARES_INVALID](./status-codes.md#vault_value_tdspares_invalid)

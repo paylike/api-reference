@@ -9,8 +9,9 @@ Reference documentation
   - [Request (data)](#request-data)
   - [Response](#response)
 - [Services](#services)
-  - [Vault](./vault)
-  - [Apple Pay](./apple-pay)
+  - [Vault](./vault.md)
+  - [Apple Pay](./apple-pay.md)
+  - [3-D Secure](./3dsecure.md)
 - [Specific status codes](#specific-status-codes)
 
 ## Basics
@@ -57,6 +58,7 @@ Data returned in the body is formatted as one of:
 
 - [Vault](./vault.md)
 - [Apple Pay](./apple-pay.md)
+- [3-D Secure](./3dsecure.md)
 
 ## Specific status codes
 

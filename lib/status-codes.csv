@@ -18,3 +18,4 @@
 "APPLEPAY_TOKEN_PUBLICKEYHASH_INVALID","Invalid `signature`: must be base64 string.",400,
 "APPLEPAY_TOKEN_APPLICATIONDATA_INVALID","Invalid `signature`: must be string.",400,
 "APPLEPAY_TOKEN_TRANSACTIONID_INVALID","Invalid `transactionId`: must be string.",400,
+"TDSECURE_PARES_INVALID","Invalid `pares`.  The `message` property of the response body might carry an additional clue about why.",400,"Invalid `pares`: {{message}}"

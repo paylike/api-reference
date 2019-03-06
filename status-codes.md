@@ -21,6 +21,7 @@ These status codes are used in [API responses](readme.md#response).
 - [APPLEPAY_TOKEN_PUBLICKEYHASH_INVALID](#applepay_token_publickeyhash_invalid)
 - [APPLEPAY_TOKEN_APPLICATIONDATA_INVALID](#applepay_token_applicationdata_invalid)
 - [APPLEPAY_TOKEN_TRANSACTIONID_INVALID](#applepay_token_transactionid_invalid)
+- [TDSECURE_PARES_INVALID](#tdsecure_pares_invalid)
 
 ## `INTERNAL_ERROR`
 
@@ -136,3 +137,10 @@ HTTP status code: 400
 Invalid `transactionId`: must be string.
 
 HTTP status code: 400
+
+## `TDSECURE_PARES_INVALID`
+
+Invalid `pares`.  The `message` property of the response body might carry an additional clue about why.
+
+HTTP status code: 400
+Message: Invalid `pares`: {{message}}
