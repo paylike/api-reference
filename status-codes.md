@@ -10,7 +10,6 @@ These status codes are used in [API responses](readme.md#response).
 - [VAULT_VALUE_TYPE_INVALID](#vault_value_type_invalid)
 - [VAULT_VALUE_PCN_INVALID](#vault_value_pcn_invalid)
 - [VAULT_VALUE_PCSC_INVALID](#vault_value_pcsc_invalid)
-- [VAULT_VALUE_TDSPARES_INVALID](#vault_value_tdspares_invalid)
 - [APPLEPAY_TOKEN_INVALID](#applepay_token_invalid)
 - [APPLEPAY_TOKEN_VERSION_UNSUPPORTED](#applepay_token_version_unsupported)
 - [APPLEPAY_TOKEN_DATA_INVALID](#applepay_token_data_invalid)
@@ -56,7 +55,7 @@ Message: Invalid request body: {{message}}
 
 ## `VAULT_VALUE_TYPE_INVALID`
 
-Invalid `type`: must be either `pcn`, `pcsc`, or `tdspares`.
+Invalid `type`: must be either `pcn` or `pcsc`.
 
 HTTP status code: 400
 
@@ -69,12 +68,6 @@ HTTP status code: 400
 ## `VAULT_VALUE_PCSC_INVALID`
 
 Invalid `pcsc`: must be 3 digits string.
-
-HTTP status code: 400
-
-## `VAULT_VALUE_TDSPARES_INVALID`
-
-Invalid `tdspares`: must be base64 string, 20000 chars max.
 
 HTTP status code: 400
 

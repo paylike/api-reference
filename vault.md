@@ -8,11 +8,10 @@ This service exposes a HTTP interface for specific types of data which are saved
 
 The type of value must be specified using the `type` parameter. Supported types:
 
-| Type       | Value                                        |
-| ---------- | -------------------------------------------- |
-| `pcn`      | Payment card number (10-19 digits string)    |
-| `pcsc`     | Payment card security code (3 digits string) |
-| `tdspares` | 3-D Secure PARes (base64 encoded string)     |
+| Type   | Value                                        |
+| ------ | -------------------------------------------- |
+| `pcn`  | Payment card number (10-19 digits string)    |
+| `pcsc` | Payment card security code (3 digits string) |
 
 **Endpoint:**
 
@@ -46,4 +45,3 @@ POST /
 - [VAULT_VALUE_TYPE_INVALID](./status-codes.md#vault_value_type_invalid)
 - [VAULT_VALUE_PCN_INVALID](./status-codes.md#vault_value_pcn_invalid)
 - [VAULT_VALUE_PCSC_INVALID](./status-codes.md#vault_value_pcsc_invalid)
-- [VAULT_VALUE_TDSPARES_INVALID](./status-codes.md#vault_value_tdspares_invalid)
