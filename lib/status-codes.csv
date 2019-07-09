@@ -7,14 +7,11 @@
 "VAULT_VALUE_TYPE_INVALID","Invalid `type`: must be either `pcn` or `pcsc`.",400,
 "VAULT_VALUE_PCN_INVALID","Invalid `pcn`: must be 10-19 digits string.",400,
 "VAULT_VALUE_PCSC_INVALID","Invalid `pcsc`: must be 3 digits string.",400,
-"APPLEPAY_TOKEN_INVALID","Invalid `token`: must be JSON string, 10000 chars max.",400,
-"APPLEPAY_TOKEN_VERSION_UNSUPPORTED","Token version unsupported.",400,
-"APPLEPAY_TOKEN_DATA_INVALID","Invalid `data`: must be string.",400,
-"APPLEPAY_TOKEN_SIGNATURE_INVALID","Invalid `signature`: must be string.",400,
-"APPLEPAY_TOKEN_KEYPAIR_UNKNOWN","Unknown key pair. Token was created with an unknown public key.",400,
-"APPLEPAY_TOKEN_HEADER_INVALID","Invalid `header`: must be object.",400,
-"APPLEPAY_TOKEN_EPHEMERALPUBLICKEY_INVALID","Invalid `signature`: must be string.",400,
-"APPLEPAY_TOKEN_PUBLICKEYHASH_INVALID","Invalid `signature`: must be base64 string.",400,
-"APPLEPAY_TOKEN_APPLICATIONDATA_INVALID","Invalid `signature`: must be string.",400,
-"APPLEPAY_TOKEN_TRANSACTIONID_INVALID","Invalid `transactionId`: must be string.",400,
 "TDSECURE_PARES_INVALID","Invalid `pares`.  The `message` property of the response body might carry an additional clue about why.",400,"Invalid `pares`: {{message}}"
+"REQUEST_INVALID","Invalid `request`.  The `message` property of the response body might carry an additional clue about why.",400,"Invalid request: {{message}}"
+"APPLEPAY_TOKEN_INVALID","Invalid `token`.  The `message` property of the response body might carry an additional clue about why.",400,"Invalid token: {{message}}"
+"APPLEPAY_VALIDATION_URL_INVALID","Invalid `validationURL`.",400
+"APPLEPAY_CONFIGURATION_INVALID","Invalid configuration. The `message` property of the response body might carry an additional clue about why.",400,"Invalid configuration: {{message}}"
+"GOOGLEPAY_TOKEN_INVALID","Invalid `token`.  The `message` property of the response body might carry an additional clue about why.",400,"Invalid token: {{message}}"
+"GOOGLEPAY_CONFIGURATION_INVALID","Invalid configuration. The `message` property of the response body might carry an additional clue about why.",400,"Invalid configuration: {{message}}"
+"GOOGLEPAY_DECODING_ERROR","Token decoding fails. The `message` property of the response body might carry an additional clue about why.",400,"Token decoding fails: {{message}}"

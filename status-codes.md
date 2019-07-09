@@ -10,17 +10,14 @@ These status codes are used in [API responses](readme.md#response).
 - [VAULT_VALUE_TYPE_INVALID](#vault_value_type_invalid)
 - [VAULT_VALUE_PCN_INVALID](#vault_value_pcn_invalid)
 - [VAULT_VALUE_PCSC_INVALID](#vault_value_pcsc_invalid)
-- [APPLEPAY_TOKEN_INVALID](#applepay_token_invalid)
-- [APPLEPAY_TOKEN_VERSION_UNSUPPORTED](#applepay_token_version_unsupported)
-- [APPLEPAY_TOKEN_DATA_INVALID](#applepay_token_data_invalid)
-- [APPLEPAY_TOKEN_SIGNATURE_INVALID](#applepay_token_signature_invalid)
-- [APPLEPAY_TOKEN_KEYPAIR_UNKNOWN](#applepay_token_keypair_unknown)
-- [APPLEPAY_TOKEN_HEADER_INVALID](#applepay_token_header_invalid)
-- [APPLEPAY_TOKEN_EPHEMERALPUBLICKEY_INVALID](#applepay_token_ephemeralpublickey_invalid)
-- [APPLEPAY_TOKEN_PUBLICKEYHASH_INVALID](#applepay_token_publickeyhash_invalid)
-- [APPLEPAY_TOKEN_APPLICATIONDATA_INVALID](#applepay_token_applicationdata_invalid)
-- [APPLEPAY_TOKEN_TRANSACTIONID_INVALID](#applepay_token_transactionid_invalid)
 - [TDSECURE_PARES_INVALID](#tdsecure_pares_invalid)
+- [REQUEST_INVALID](#request_invalid)
+- [APPLEPAY_TOKEN_INVALID](#applepay_token_invalid)
+- [APPLEPAY_VALIDATION_URL_INVALID](#applepay_validation_url_invalid)
+- [APPLEPAY_CONFIGURATION_INVALID](#applepay_configuration_invalid)
+- [GOOGLEPAY_TOKEN_INVALID](#googlepay_token_invalid)
+- [GOOGLEPAY_CONFIGURATION_INVALID](#googlepay_configuration_invalid)
+- [GOOGLEPAY_DECODING_ERROR](#googlepay_decoding_error)
 
 ## `INTERNAL_ERROR`
 
@@ -71,69 +68,57 @@ Invalid `pcsc`: must be 3 digits string.
 
 HTTP status code: 400
 
-## `APPLEPAY_TOKEN_INVALID`
-
-Invalid `token`: must be JSON string, 10000 chars max.
-
-HTTP status code: 400
-
-## `APPLEPAY_TOKEN_VERSION_UNSUPPORTED`
-
-Token version unsupported.
-
-HTTP status code: 400
-
-## `APPLEPAY_TOKEN_DATA_INVALID`
-
-Invalid `data`: must be string.
-
-HTTP status code: 400
-
-## `APPLEPAY_TOKEN_SIGNATURE_INVALID`
-
-Invalid `signature`: must be string.
-
-HTTP status code: 400
-
-## `APPLEPAY_TOKEN_KEYPAIR_UNKNOWN`
-
-Unknown key pair. Token was created with an unknown public key.
-
-HTTP status code: 400
-
-## `APPLEPAY_TOKEN_HEADER_INVALID`
-
-Invalid `header`: must be object.
-
-HTTP status code: 400
-
-## `APPLEPAY_TOKEN_EPHEMERALPUBLICKEY_INVALID`
-
-Invalid `signature`: must be string.
-
-HTTP status code: 400
-
-## `APPLEPAY_TOKEN_PUBLICKEYHASH_INVALID`
-
-Invalid `signature`: must be base64 string.
-
-HTTP status code: 400
-
-## `APPLEPAY_TOKEN_APPLICATIONDATA_INVALID`
-
-Invalid `signature`: must be string.
-
-HTTP status code: 400
-
-## `APPLEPAY_TOKEN_TRANSACTIONID_INVALID`
-
-Invalid `transactionId`: must be string.
-
-HTTP status code: 400
-
 ## `TDSECURE_PARES_INVALID`
 
 Invalid `pares`.  The `message` property of the response body might carry an additional clue about why.
 
 HTTP status code: 400
 Message: Invalid `pares`: {{message}}
+
+## `REQUEST_INVALID`
+
+Invalid `request`.  The `message` property of the response body might carry an additional clue about why.
+
+HTTP status code: 400
+Message: Invalid request: {{message}}
+
+## `APPLEPAY_TOKEN_INVALID`
+
+Invalid `token`.  The `message` property of the response body might carry an additional clue about why.
+
+HTTP status code: 400
+Message: Invalid token: {{message}}
+
+## `APPLEPAY_VALIDATION_URL_INVALID`
+
+Invalid `validationURL`.
+
+HTTP status code: 400
+
+## `APPLEPAY_CONFIGURATION_INVALID`
+
+Invalid configuration. The `message` property of the response body might carry an additional clue about why.
+
+HTTP status code: 400
+Message: Invalid configuration: {{message}}
+
+## `GOOGLEPAY_TOKEN_INVALID`
+
+Invalid `token`.  The `message` property of the response body might carry an additional clue about why.
+
+HTTP status code: 400
+Message: Invalid token: {{message}}
+
+## `GOOGLEPAY_CONFIGURATION_INVALID`
+
+Invalid configuration. The `message` property of the response body might carry an additional clue about why.
+
+HTTP status code: 400
+Message: Invalid configuration: {{message}}
+
+## `GOOGLEPAY_DECODING_ERROR`
+
+Token decoding fails. The `message` property of the response body might carry an additional clue about why.
+
+HTTP status code: 400
+Message: Token decoding fails: {{message}}
