@@ -10,7 +10,7 @@
 "TDSECURE_PARES_INVALID","Invalid `pares`.  The `message` property of the response body might carry an additional clue about why.",400,"Invalid `pares`: {{message}}"
 "REQUEST_INVALID","Invalid `request`.  The `message` property of the response body might carry an additional clue about why.",400,"Invalid request: {{message}}"
 "APPLEPAY_TOKEN_INVALID","Invalid `token`.  The `message` property of the response body might carry an additional clue about why.",400,"Invalid token: {{message}}"
-"APPLEPAY_VALIDATION_URL_INVALID","Invalid `validationURL`.",400
+"APPLEPAY_VALIDATION_URL_INVALID","Invalid `validationURL`.",400,
 "APPLEPAY_CONFIGURATION_INVALID","Invalid configuration. The `message` property of the response body might carry an additional clue about why.",400,"Invalid configuration: {{message}}"
 "GOOGLEPAY_TOKEN_INVALID","Invalid `token`.  The `message` property of the response body might carry an additional clue about why.",400,"Invalid token: {{message}}"
 "GOOGLEPAY_CONFIGURATION_INVALID","Invalid configuration. The `message` property of the response body might carry an additional clue about why.",400,"Invalid configuration: {{message}}"
