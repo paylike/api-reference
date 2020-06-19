@@ -4,11 +4,11 @@
 "VERSION_MISSING","No API version was found in the request header. Please see [this section on versioning](readme.md#versioning).",400,
 "VERSION_UNSUPPORTED","The indicated API version is not supported. See the list of supported versions here: [versioning](readme.md#versioning).",400,
 "BODY_INVALID","The request body was not parsed correctly. The `message` property of the response body might carry an additional clue about why. See [this section](readme#request-data) for general information on how to send data.",400,"Invalid request body: {{message}}"
+"REQUEST_INVALID","Invalid `request`.  The `message` property of the response body might carry an additional clue about why.",400,"Invalid request: {{message}}"
 "VAULT_VALUE_TYPE_INVALID","Invalid `type`: must be either `pcn` or `pcsc`.",400,
 "VAULT_VALUE_PCN_INVALID","Invalid `pcn`: must be 10-19 digits string.",400,
 "VAULT_VALUE_PCSC_INVALID","Invalid `pcsc`: must be 3 digits string.",400,
 "TDSECURE_PARES_INVALID","Invalid `pares`.  The `message` property of the response body might carry an additional clue about why.",400,"Invalid `pares`: {{message}}"
-"REQUEST_INVALID","Invalid `request`.  The `message` property of the response body might carry an additional clue about why.",400,"Invalid request: {{message}}"
 "APPLEPAY_TOKEN_INVALID","Invalid `token`.  The `message` property of the response body might carry an additional clue about why.",400,"Invalid token: {{message}}"
 "APPLEPAY_VALIDATION_URL_INVALID","Invalid `validationURL`.",400,
 "APPLEPAY_CONFIGURATION_INVALID","Invalid configuration. The `message` property of the response body might carry an additional clue about why.",400,"Invalid configuration: {{message}}"

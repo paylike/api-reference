@@ -7,11 +7,11 @@ These status codes are used in [API responses](readme.md#response).
 - [VERSION_MISSING](#version_missing)
 - [VERSION_UNSUPPORTED](#version_unsupported)
 - [BODY_INVALID](#body_invalid)
+- [REQUEST_INVALID](#request_invalid)
 - [VAULT_VALUE_TYPE_INVALID](#vault_value_type_invalid)
 - [VAULT_VALUE_PCN_INVALID](#vault_value_pcn_invalid)
 - [VAULT_VALUE_PCSC_INVALID](#vault_value_pcsc_invalid)
 - [TDSECURE_PARES_INVALID](#tdsecure_pares_invalid)
-- [REQUEST_INVALID](#request_invalid)
 - [APPLEPAY_TOKEN_INVALID](#applepay_token_invalid)
 - [APPLEPAY_VALIDATION_URL_INVALID](#applepay_validation_url_invalid)
 - [APPLEPAY_CONFIGURATION_INVALID](#applepay_configuration_invalid)
@@ -50,6 +50,13 @@ The request body was not parsed correctly. The `message` property of the respons
 HTTP status code: 400
 Message: Invalid request body: {{message}}
 
+## `REQUEST_INVALID`
+
+Invalid `request`.  The `message` property of the response body might carry an additional clue about why.
+
+HTTP status code: 400
+Message: Invalid request: {{message}}
+
 ## `VAULT_VALUE_TYPE_INVALID`
 
 Invalid `type`: must be either `pcn` or `pcsc`.
@@ -74,13 +81,6 @@ Invalid `pares`.  The `message` property of the response body might carry an add
 
 HTTP status code: 400
 Message: Invalid `pares`: {{message}}
-
-## `REQUEST_INVALID`
-
-Invalid `request`.  The `message` property of the response body might carry an additional clue about why.
-
-HTTP status code: 400
-Message: Invalid request: {{message}}
 
 ## `APPLEPAY_TOKEN_INVALID`
 
