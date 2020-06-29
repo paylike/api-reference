@@ -25,10 +25,10 @@ POST /
 {
   type: String,
   value: String,
-} → {
-  token: String,
-}
+} → @paylike/token/generic
 ```
+
+[@paylike/token/generic](https://github.com/paylike/schemas/blob/master/schemas.md#payliketokengeneric)
 
 **Request** with a body must carry a header of:
 
@@ -42,6 +42,4 @@ POST /
 - [VERSION_MISSING](./status-codes.md#version_missing)
 - [VERSION_UNSUPPORTED](./status-codes.md#version_unsupported)
 - [BODY_INVALID](./status-codes.md#body_invalid)
-- [VAULT_VALUE_TYPE_INVALID](./status-codes.md#vault_value_type_invalid)
-- [VAULT_VALUE_PCN_INVALID](./status-codes.md#vault_value_pcn_invalid)
-- [VAULT_VALUE_PCSC_INVALID](./status-codes.md#vault_value_pcsc_invalid)
+- [REQUEST_INVALID](./status-codes.md#body_invalid)

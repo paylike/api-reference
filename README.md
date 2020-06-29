@@ -58,8 +58,9 @@ Data returned in the body is formatted as one of:
 
 - [Vault](./vault.md)
 - [Apple Pay](./apple-pay.md)
+- [Google Pay](./google-pay.md)
 - [3-D Secure](./3dsecure.md)
 
 ## Specific status codes
 
-List of all [specific status codes](status-codes.md)
+List of all [specific status codes](./status-codes.md)

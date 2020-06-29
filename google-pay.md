@@ -1,20 +1,20 @@
-# 3-D Secure service
+# Google Pay Service
 
-Prepare (mandatory) a 3-D Secure token for use elsewhere in the API.
+Prepare (mandatory) a Google Pay token for use elsewhere in the API.
 
 ## Interface
 
-The pares must be provided as base64 string
+The token must be provided as JSON string
 
 **Endpoint:**
 
 ```shell
-POST /pares
+POST /token
 ```
 
 ```javascript
 {
-    pares: String,
+    token: String,
 }
 → @paylike/token/generic
 ```
@@ -34,4 +34,6 @@ POST /pares
 - [VERSION_UNSUPPORTED](./status-codes.md#version_unsupported)
 - [BODY_INVALID](./status-codes.md#body_invalid)
 - [REQUEST_INVALID](./status-codes.md#body_invalid)
-- [TDSECURE_PARES_INVALID](./status-codes.md#3tsecure_pares_invalid)
+- [GOOGLEPAY_TOKEN_INVALID](#googlepay_token_invalid)
+- [GOOGLEPAY_CONFIGURATION_INVALID](#googlepay_configuration_invalid)
+- [GOOGLEPAY_DECODING_ERROR](#googlepay_decoding_error)

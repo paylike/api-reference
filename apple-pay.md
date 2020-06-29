@@ -16,10 +16,10 @@ POST /token
 {
     token: String,
 }
-→ {
-    token: String,
-}
+→ @paylike/token/generic
 ```
+
+[@paylike/token/generic](https://github.com/paylike/schemas/blob/master/schemas.md#payliketokengeneric)
 
 **Request** with a body must carry a header of:
 
@@ -33,13 +33,7 @@ POST /token
 - [VERSION_MISSING](./status-codes.md#version_missing)
 - [VERSION_UNSUPPORTED](./status-codes.md#version_unsupported)
 - [BODY_INVALID](./status-codes.md#body_invalid)
+- [REQUEST_INVALID](./status-codes.md#body_invalid)
 - [APPLEPAY_TOKEN_INVALID](./status-codes.md#applepay_token_invalid)
-- [APPLEPAY_TOKEN_VERSION_UNSUPPORTED](./status-codes.md#applepay_token_version_unsupported)
-- [APPLEPAY_TOKEN_DATA_INVALID](./status-codes.md#applepay_token_data_invalid)
-- [APPLEPAY_TOKEN_SIGNATURE_INVALID](./status-codes.md#applepay_token_signature_invalid)
-- [APPLEPAY_TOKEN_KEYPAIR_UNKNOWN](./status-codes.md#applepay_token_keypair_unknown)
-- [APPLEPAY_TOKEN_HEADER_INVALID](./status-codes.md#applepay_token_header_invalid)
-- [APPLEPAY_TOKEN_EPHEMERALPUBLICKEY_INVALID](./status-codes.md#applepay_token_ephemeralpublickey_invalid)
-- [APPLEPAY_TOKEN_PUBLICKEYHASH_INVALID](./status-codes.md#applepay_token_publickeyhash_invalid)
-- [APPLEPAY_TOKEN_APPLICATIONDATA_INVALID](./status-codes.md#applepay_token_applicationdata_invalid)
-- [APPLEPAY_TOKEN_TRANSACTIONID_INVALID](./status-codes.md#applepay_token_transactionid_invalid)
+- [APPLEPAY_CONFIGURATION_INVALID](./status-codes.md#applepay_configuration_invalid)
+- [APPLEPAY_VALIDATION_URL_INVALID](./status-codes.md#applepay_validation_url_invalid)
