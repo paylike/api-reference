@@ -12,7 +12,7 @@ Reference documentation
   - [Vault](./vault.md)
   - [Apple Pay](./apple-pay.md)
   - [3-D Secure](./3dsecure.md)
-- [Specific status codes](#specific-status-codes)
+- [Status codes](#status-codes)
 
 ## Basics
 
@@ -44,8 +44,8 @@ Refer to the list below or the HTTP standard meanings for HTTP status codes.
 - `429 Too Many Requests` (see [429 (rate limiting) on MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429))
 - `503 Service Unavailable` (see [503 on MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503))
 
-For more specific information the response might carry a
-`Specific-Status-Code` header or include a `code` property in the returned
+For more specific information the response might carry an
+`X-Status-Code` header or include a `code` property in the returned
 JSON. Possible values are listed under each endpoint, and
 [there is a complete list here](status-codes.md).
 
@@ -61,6 +61,6 @@ Data returned in the body is formatted as one of:
 - [Google Pay](./google-pay.md)
 - [3-D Secure](./3dsecure.md)
 
-## Specific status codes
+## Status codes
 
-List of all [specific status codes](./status-codes.md)
+List of all values for [`X-Status-Code`](./status-codes.md)
