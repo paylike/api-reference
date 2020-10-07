@@ -49,21 +49,21 @@ Message: Invalid request body: {{message}}
 
 ## `REQUEST_INVALID`
 
-Invalid `request`.  The `message` property of the response body might carry an additional clue about why.
+Invalid `request`. The `message` property of the response body might carry an additional clue about why.
 
 HTTP status code: 400
 Message: Invalid request: {{message}}
 
 ## `TDSECURE_PARES_INVALID`
 
-Invalid `pares`.  The `message` property of the response body might carry an additional clue about why.
+Invalid `pares`. The `message` property of the response body might carry an additional clue about why.
 
 HTTP status code: 400
 Message: Invalid `pares`: {{message}}
 
 ## `APPLEPAY_TOKEN_INVALID`
 
-Invalid `token`.  The `message` property of the response body might carry an additional clue about why.
+Invalid `token`. The `message` property of the response body might carry an additional clue about why.
 
 HTTP status code: 400
 Message: Invalid token: {{message}}
@@ -83,7 +83,7 @@ Message: Invalid configuration: {{message}}
 
 ## `GOOGLEPAY_TOKEN_INVALID`
 
-Invalid `token`.  The `message` property of the response body might carry an additional clue about why.
+Invalid `token`. The `message` property of the response body might carry an additional clue about why.
 
 HTTP status code: 400
 Message: Invalid token: {{message}}
