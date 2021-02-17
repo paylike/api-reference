@@ -13,7 +13,7 @@ POST https://applepay.paylike.io/token
 // → @paylike/token/generic
 ```
 
-[@paylike/token/generic](https://github.com/paylike/schemas/blob/master/schemas.md#payliketokengeneric)
+- [@paylike/token/generic](https://github.com/paylike/schemas/blob/master/schemas.md#payliketokengeneric)
 
 ## Status codes
 
