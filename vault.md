@@ -15,17 +15,16 @@ The type of value must be specified using the `type` parameter. Supported types:
 
 **Endpoint:**
 
-```javascript
-
+```shell
 POST /
-
 ```
 
 ```javascript
 {
   type: String,
   value: String,
-} → @paylike/token/generic
+}
+// → @paylike/token/generic
 ```
 
 [@paylike/token/generic](https://github.com/paylike/schemas/blob/master/schemas.md#payliketokengeneric)

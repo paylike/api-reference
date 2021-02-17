@@ -16,7 +16,7 @@ POST /token
 {
     token: String,
 }
-→ @paylike/token/generic
+// → @paylike/token/generic
 ```
 
 [@paylike/token/generic](https://github.com/paylike/schemas/blob/master/schemas.md#payliketokengeneric)
