@@ -2,8 +2,6 @@
 
 Prepare (mandatory) a Google Pay token for use elsewhere in the API.
 
-The token must be provided as JSON string
-
 ```shell
 POST https://googlepay.paylike.io/token
 ```
@@ -16,11 +14,6 @@ POST https://googlepay.paylike.io/token
 ```
 
 [@paylike/token/generic](https://github.com/paylike/schemas/blob/master/schemas.md#payliketokengeneric)
-
-**Request** with a body must carry a header of:
-
-- `Content-Type: application/json`
-- `Accept-Version: 1`
 
 ## Status codes
 

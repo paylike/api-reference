@@ -23,10 +23,7 @@ POST https://vault.paylike.io
 
 [@paylike/token/generic](https://github.com/paylike/schemas/blob/master/schemas.md#payliketokengeneric)
 
-**Request** with a body must carry a header of:
 
-- `Content-Type: application/json`
-- `Accept-Version: 1`
 
 ## Status codes
 

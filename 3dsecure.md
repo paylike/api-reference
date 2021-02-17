@@ -15,11 +15,6 @@ POST https://3dsecure.paylike.io/pares
 
 [@paylike/token/generic](https://github.com/paylike/schemas/blob/master/schemas.md#payliketokengeneric)
 
-**Request** with a body must carry a header of:
-
-- `Content-Type: application/json`
-- `Accept-Version: 1`
-
 ## Status codes
 
 - [INTERNAL_ERROR](./status-codes.md#internal_error)
