@@ -2,15 +2,13 @@
 
 Prepare (mandatory) a 3-D Secure token for use elsewhere in the API.
 
-The pares must be provided as base64 string
-
 ```shell
 POST /pares
 ```
 
 ```javascript
 {
-    pares: String,
+    pares: String, // base64
 }
 // → @paylike/token/generic
 ```
