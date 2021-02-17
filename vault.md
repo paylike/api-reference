@@ -2,18 +2,12 @@
 
 Tokenize sensitive details for use elsewhere in the API.
 
-## Interface
-
-**Save a value to the vault.**
-
 The type of value must be specified using the `type` parameter. Supported types:
 
 | Type   | Value                                        |
 | ------ | -------------------------------------------- |
 | `pcn`  | Payment card number (10-19 digits string)    |
 | `pcsc` | Payment card security code (3 digits string) |
-
-**Endpoint:**
 
 ```shell
 POST /
@@ -34,7 +28,7 @@ POST /
 - `Content-Type: application/json`
 - `Accept-Version: 1`
 
-### Status codes
+## Status codes
 
 - [INTERNAL_ERROR](./status-codes.md#internal_error)
 - [ENDPOINT_NOT_FOUND](./status-codes.md#endpoint_not_found)

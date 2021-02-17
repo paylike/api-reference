@@ -2,11 +2,7 @@
 
 Prepare (mandatory) a Google Pay token for use elsewhere in the API.
 
-## Interface
-
 The token must be provided as JSON string
-
-**Endpoint:**
 
 ```shell
 POST /token
@@ -26,7 +22,7 @@ POST /token
 - `Content-Type: application/json`
 - `Accept-Version: 1`
 
-### Status codes
+## Status codes
 
 - [INTERNAL_ERROR](./status-codes.md#internal_error)
 - [ENDPOINT_NOT_FOUND](./status-codes.md#endpoint_not_found)
