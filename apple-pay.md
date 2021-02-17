@@ -1,4 +1,4 @@
-# Apple Pay Service
+# Apple Pay service
 
 Prepare (mandatory) an Apple Pay token for use elsewhere in the API.
 

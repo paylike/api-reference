@@ -1,4 +1,4 @@
-# Google Pay Service
+# Google Pay service
 
 Prepare (mandatory) a Google Pay token for use elsewhere in the API.
 
