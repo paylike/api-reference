@@ -31,3 +31,13 @@ The type of value must be specified using the `type` parameter:
 - [VERSION_UNSUPPORTED](./status-codes.md#version_unsupported)
 - [BODY_INVALID](./status-codes.md#body_invalid)
 - [REQUEST_INVALID](./status-codes.md#body_invalid)
+
+## Example
+
+```sh
+curl https://vault.paylike.io\
+  --header 'Content-Type: application/json' \
+  --header 'Accept-Version: 1' \
+  --data '{"type": "pcn","value":"1234123412341234"}'
+# {"token":"TTSOxu13AhHPdaIIMGdeUToEQXy+Y/JviNGXDTXKyhJOWhVWbJ2W2L8EUh5k6LNKZAQCOaseXo27VgpJoug5upZSPJaFjHgjfq6bxPrlCeYBDtkCFIokleqPJTN7mco5/PwGJdyV/smuL7qmebY="}
+```
