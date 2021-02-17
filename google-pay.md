@@ -5,7 +5,7 @@ Prepare (mandatory) a Google Pay token for use elsewhere in the API.
 The token must be provided as JSON string
 
 ```shell
-POST /token
+POST https://googlepay.paylike.io/token
 ```
 
 ```javascript

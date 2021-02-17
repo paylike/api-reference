@@ -10,7 +10,7 @@ The type of value must be specified using the `type` parameter. Supported types:
 | `pcsc` | Payment card security code (3 digits string) |
 
 ```shell
-POST /
+POST https://vault.paylike.io
 ```
 
 ```javascript

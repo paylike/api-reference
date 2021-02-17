@@ -5,7 +5,7 @@ Prepare (mandatory) an Apple Pay token for use elsewhere in the API.
 The token must be provided as JSON string
 
 ```shell
-POST /token
+POST https://applepay.paylike.io/token
 ```
 
 ```javascript

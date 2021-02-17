@@ -3,7 +3,7 @@
 Prepare (mandatory) a 3-D Secure token for use elsewhere in the API.
 
 ```shell
-POST /pares
+POST https://3dsecure.paylike.io/pares
 ```
 
 ```javascript
