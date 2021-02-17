@@ -2,13 +2,6 @@
 
 Tokenize sensitive details for use elsewhere in the API.
 
-The type of value must be specified using the `type` parameter. Supported types:
-
-| Type   | Value                                        |
-| ------ | -------------------------------------------- |
-| `pcn`  | Payment card number (10-19 digits string)    |
-| `pcsc` | Payment card security code (3 digits string) |
-
 ```shell
 POST https://vault.paylike.io
 ```
@@ -23,7 +16,12 @@ POST https://vault.paylike.io
 
 [@paylike/token/generic](https://github.com/paylike/schemas/blob/master/schemas.md#payliketokengeneric)
 
+The type of value must be specified using the `type` parameter:
 
+| Type   | Value                                        |
+| ------ | -------------------------------------------- |
+| `pcn`  | Payment card number (10-19 digits string)    |
+| `pcsc` | Payment card security code (3 digits string) |
 
 ## Status codes
 
