@@ -1,6 +1,6 @@
 # Vault service
 
-This service exposes a HTTP interface for specific types of data which are saved using the vault service.
+Tokenize sensitive details for use elsewhere in the API.
 
 ## Interface
 
