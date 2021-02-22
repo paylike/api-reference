@@ -11,5 +11,23 @@
     "handlebars": "^4.1.2",
     "pull-stream": "^3.6.13",
     "stream-to-pull-stream": "^1.7.3"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "useTabs": true,
+    "bracketSpacing": false,
+    "trailingComma": "es5",
+    "tabWidth": 4,
+    "proseWrap": "always",
+    "overrides": [
+      {
+        "files": "*.md",
+        "options": {
+          "useTabs": false,
+          "tabWidth": 2
+        }
+      }
+    ]
   }
 }
