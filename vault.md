@@ -21,6 +21,9 @@ The type of value must be specified using the `type` parameter:
 | `pcn`  | Payment card number (10-19 digits string)    |
 | `pcsc` | Payment card security code (3 digits string) |
 
+Note that APIs accepting tokens expect the _entire_ response. It is adviced
+_not_ to inspect the response, but keep it as is for later use.
+
 ## Status codes
 
 - [INTERNAL_ERROR](./status-codes.md#internal_error)
