@@ -1,14 +1,10 @@
 # API reference
 
-Reference documentation
-
-## Content
-
 - [Basics](#basics)
   - [Versioning](#versioning)
   - [Request (data)](#request-data)
   - [Response](#response)
-- [Services](#services)
+- Services
   - [Vault](./vault.md)
   - [Apple Pay](./apple-pay.md)
   - [3-D Secure](./3dsecure.md)
@@ -53,14 +49,3 @@ Data returned in the body is formatted as one of:
 
 - JSON designated by the header `Content-Type: application/json`
 - JSON separated by newlines designated by the header `Content-Type: application/x-ndjson`
-
-## Services
-
-- [Vault](./vault.md)
-- [Apple Pay](./apple-pay.md)
-- [Google Pay](./google-pay.md)
-- [3-D Secure](./3dsecure.md)
-
-## Status codes
-
-List of all values for [`X-Status-Code`](./status-codes.md)

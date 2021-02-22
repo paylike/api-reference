@@ -1,4 +1,4 @@
-# 3-D Secure service
+# 3-D Secure
 
 Prepare (mandatory) a 3-D Secure token for use elsewhere in the API.
 

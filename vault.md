@@ -1,4 +1,4 @@
-# Vault service
+# Vault
 
 Tokenize sensitive details for use elsewhere in the API.
 
