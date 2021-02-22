@@ -10,10 +10,8 @@ POST https://applepay.paylike.io/token
 {
     token: String,
 }
-// → @paylike/token/generic
+// → Token
 ```
-
-- [@paylike/token/generic](https://github.com/paylike/schemas/blob/master/schemas.md#payliketokengeneric)
 
 ## Status codes
 

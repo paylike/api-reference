@@ -11,7 +11,7 @@ POST https://vault.paylike.io
   type: String,
   value: String,
 }
-// → @paylike/token/generic
+// → Token
 ```
 
 The type of value must be specified using the `type` parameter:
@@ -20,8 +20,6 @@ The type of value must be specified using the `type` parameter:
 | ------ | -------------------------------------------- |
 | `pcn`  | Payment card number (10-19 digits string)    |
 | `pcsc` | Payment card security code (3 digits string) |
-
-- [@paylike/token/generic](https://github.com/paylike/schemas/blob/master/schemas.md#payliketokengeneric)
 
 ## Status codes
 

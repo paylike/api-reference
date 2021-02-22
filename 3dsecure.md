@@ -10,10 +10,8 @@ POST https://3dsecure.paylike.io/pares
 {
     pares: String, // base64
 }
-// → @paylike/token/generic
+// → Token
 ```
-
-- [@paylike/token/generic](https://github.com/paylike/schemas/blob/master/schemas.md#payliketokengeneric)
 
 ## Status codes
 
