@@ -20,6 +20,9 @@ The `Accept-Version` header is used to specify the desired API version.
 Accept-Version: 1
 ```
 
+Because the version is specified for each request, it is possible to upgrade one
+request at a time, or mix different versions, in an application.
+
 ```sh
 curl --header 'Accept-Version: 1'
 ```
