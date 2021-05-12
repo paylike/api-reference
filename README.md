@@ -46,9 +46,10 @@ Refer to the list below or the HTTP standard meanings for HTTP status codes.
 - `503 Service Unavailable` (see
   [503 on MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503))
 
-For more specific information the response might carry an `X-Status-Code` header
-or include a `code` property in the returned JSON. Possible values are listed
-under each endpoint, and [there is a complete list here](status-codes.md).
+For HTTP status codes not in the 200-299 range, the response might carry an
+`X-Status-Code` header or include a `code` property in a JSON body referencing a
+more specific status code. Possible values are listed under each endpoint, and
+[there is a complete list here](status-codes.md).
 
 Data returned in the body is formatted as one of:
 
