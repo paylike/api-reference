@@ -49,7 +49,7 @@ Message: Invalid request body: {{message}}
 
 ## `REQUEST_INVALID`
 
-Invalid `request`. The `message` property of the response body might carry an additional clue about why.
+Invalid `request`. Typically an input validation error. The `message` property of the response body might carry an additional clue about why.
 
 HTTP status code: 400
 Message: Invalid request: {{message}}
