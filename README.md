@@ -7,6 +7,9 @@ The API described here complements and works together with that described by
 [the "API docs"](https://github.com/paylike/api-docs), though most functionality
 will eventually be available here.
 
+[Subscribe to our mailing list](http://eepurl.com/bCGmg1) for deprecation
+notices and watch this repository for new features.
+
 - [Basics](#basics)
   - [Versioning](#versioning)
   - [Request (data)](#request-data)
