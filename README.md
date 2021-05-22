@@ -1,5 +1,8 @@
 # API reference
 
+Looking for our payment popup? Check out the
+[web SDK](https://github.com/paylike/sdk).
+
 - [Basics](#basics)
   - [Versioning](#versioning)
   - [Request (data)](#request-data)
