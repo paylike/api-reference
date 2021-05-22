@@ -10,6 +10,14 @@ will eventually be available here.
 [Subscribe to our mailing list](http://eepurl.com/bCGmg1) for deprecation
 notices and watch this repository for new features.
 
+Clients:
+
+- JavaScript
+  - https://www.npmjs.com/package/@paylike/client (high-level)
+  - https://www.npmjs.com/package/@paylike/request (low-level)
+
+Table of contents:
+
 - [Basics](#basics)
   - [Versioning](#versioning)
   - [Request (data)](#request-data)
