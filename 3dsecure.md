@@ -1,5 +1,9 @@
 # 3-D Secure
 
+You will not need this API if you are using our
+[payment popup](https://github.com/paylike/sdk) or the
+[payments API](payments/index.md).
+
 Prepare (mandatory) a 3-D Secure token for use elsewhere in the API.
 
 ```shell
