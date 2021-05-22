@@ -3,6 +3,10 @@
 Looking for our payment popup? Check out the
 [web SDK](https://github.com/paylike/sdk).
 
+The API described here complements and works together with that described by
+[the "API docs"](https://github.com/paylike/api-docs), though most functionality
+will eventually be available here.
+
 - [Basics](#basics)
   - [Versioning](#versioning)
   - [Request (data)](#request-data)
