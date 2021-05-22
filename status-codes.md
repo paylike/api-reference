@@ -1,6 +1,6 @@
 # Status codes
 
-These status codes are used in [API responses](readme.md#response).
+These status codes are used in [API responses](README.md#response).
 
 - [INTERNAL_ERROR](#internal_error)
 - [ENDPOINT_NOT_FOUND](#endpoint_not_found)
