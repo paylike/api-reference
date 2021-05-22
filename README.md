@@ -12,6 +12,7 @@ will eventually be available here.
   - [Request (data)](#request-data)
   - [Response](#response)
 - Services
+  - [Payments](./payments/index.md)
   - [Vault](./vault.md)
   - [Apple Pay](./apple-pay.md)
   - [3-D Secure](./3dsecure.md)
