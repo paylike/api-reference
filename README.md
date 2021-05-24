@@ -27,7 +27,7 @@ Table of contents:
   - [Vault](./vault.md)
   - [Apple Pay](./apple-pay.md)
   - [3-D Secure](./3dsecure.md)
-- [Status codes](#status-codes)
+- [Status codes](./status-codes.md)
 
 ## Basics
 
