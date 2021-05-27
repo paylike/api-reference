@@ -141,6 +141,11 @@ It should be omitted entirely for subscriptions with no amount due immediately
 or agreements for later use of the payment instrument for yet unknown amounts
 (e.g. "save card to account").
 
+If the amount has a higher precision than what the payment instrument supports
+it will be rounded up to the nearest supported amount (e.g. EUR 1.855 for a Visa
+card will become EUR 1.86). Consult https://github.com/paylike/currencies for
+the precision supported.
+
 ### `card.number`
 
 This field should be a token of the `pcn` type as obtained from
