@@ -47,6 +47,7 @@ POST https://b.paylike.io/payments
 
   amount: Money, // optional
 
+  // one of:
   card: {
       number: Token,
       expiry: {
@@ -56,6 +57,8 @@ POST https://b.paylike.io/payments
       code: Token,
     },
   },
+  // or
+  applepay: Token,
 
   // optional
   custom,
@@ -176,6 +179,11 @@ For any payments series occuring in fixed intervals (e.g. monthly subscriptions)
 or predetermined rates (e.g. installments) use the `plan` field instead.
 
 This flag can be combined with `card.store.customer`.
+
+### `applepay`
+
+This field should be an Apple Pay token obtained from
+[the Apple Pay service](https://github.com/paylike/api-reference/blob/master/apple-pay.md).
 
 ### `custom`
 
@@ -327,6 +335,8 @@ the native date type when formatted as JSON.
 - [PAYMENT_RECEIVER_BLOCKED](../status-codes.md#payment_receiver_blocked)
 - [PAYMENT_REJECTED_BY_ISSUER](../status-codes.md#payment_rejected_by_issuer)
 - [PAYMENT_REJECTED](../status-codes.md#payment_rejected)
+- [PAYMENT_APPLEPAY_AMOUNT_MISMATCH](../status-codes.md#payment_applepay_amount_mismatch)
+- [PAYMENT_APPLEPAY_EXPIRED](../status-codes.md#payment_applepay_expired)
 - [TDSECURE_REQUIRED](../status-codes.md#tdsecure_required)
 - [TDSECURE_FAILED](../status-codes.md#tdsecure_failed)
 - [TDSECURE_PARES_INVALID](../status-codes.md#tdsecure_pares_invalid)
