@@ -21,6 +21,8 @@ These status codes are used in [API responses](README.md#response).
 - [PAYMENT_CARD_EXPIRED](#payment_card_expired)
 - [PAYMENT_CARD_DISABLED](#payment_card_disabled)
 - [PAYMENT_CARD_LOST](#payment_card_lost)
+- [PAYMENT_APPLEPAY_AMOUNT_MISMATCH](#payment_applepay_amount_mismatch)
+- [PAYMENT_APPLEPAY_EXPIRED](#payment_applepay_expired)
 - [PAYMENT_AMOUNT_LIMIT](#payment_amount_limit)
 - [PAYMENT_INSUFFICIENT_FUNDS](#payment_insufficient_funds)
 - [PAYMENT_RECEIVER_BLOCKED](#payment_receiver_blocked)
@@ -163,6 +165,20 @@ The payment card has been marked as lost or stolen by the issuing bank. The owne
 
 HTTP status code: 400
 Message: Payment card has been marked as lost
+
+## `PAYMENT_APPLEPAY_AMOUNT_MISMATCH`
+
+There is a mismatch between the amount the Apple Pay token was issued for and the amount requested by the payment.
+
+HTTP status code: 400
+Message: The amount of the Apple Pay token does not match that of the payment
+
+## `PAYMENT_APPLEPAY_EXPIRED`
+
+The Apple Pay token was issued too long ago to be used for a new payment.
+
+HTTP status code: 400
+Message: The Apple Pay token has expired
 
 ## `PAYMENT_AMOUNT_LIMIT`
 
