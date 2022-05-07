@@ -327,6 +327,7 @@ the native date type when formatted as JSON.
 - [PAYMENT_RECEIVER_BLOCKED](../status-codes.md#payment_receiver_blocked)
 - [PAYMENT_REJECTED_BY_ISSUER](../status-codes.md#payment_rejected_by_issuer)
 - [PAYMENT_REJECTED](../status-codes.md#payment_rejected)
+- [PAYMENT_METHOD_ERROR](../status-codes.md#payment_method_error)
 - [TDSECURE_REQUIRED](../status-codes.md#tdsecure_required)
 - [TDSECURE_FAILED](../status-codes.md#tdsecure_failed)
 - [TDSECURE_PARES_INVALID](../status-codes.md#tdsecure_pares_invalid)

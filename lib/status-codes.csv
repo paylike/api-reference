@@ -23,6 +23,9 @@
 "PAYMENT_RECEIVER_BLOCKED","The receiver of the payment was blocked by the owner of the payment method. It is typically used by issuers to block subscriptions and can only be lifted by them.",400,"Payment receiver blocked by payment method"
 "PAYMENT_REJECTED_BY_ISSUER","The payment was rejected by the issuer of the payment method. Only the issuer has further information as to why.",400,"The payment was rejected"
 "PAYMENT_REJECTED","The payment was rejected by the network. This may happen due to an increased risk of fraud.",400,"The payment was rejected"
+"PAYMENT_METHOD_ERROR","An unexpected error happened at the underlying payment method. The state of the payment depends on the method used.
+
+Payment cards: No funds have been withdrawn, but an amount may have been reserved. The payment card holder will be able to remove the reservation by contacting their issuing bank. Only the issuing bank may remove such reservation.",400,"Unexpected payment method error"
 "TDSECURE_REQUIRED","3-D Secure is required to process this payment but it was not possible to obtain.",400,"3-D Secure is required but is not supported by the payment method at the moment."
 "TDSECURE_FAILED","3-D Secure is required to process this payment but failed to be completed.",400,"3-D Secure is required but failed. Please retry later."
 "TDSECURE_PARES_INVALID","Invalid `pares`. The `message` property of the response body might carry an additional clue about why.",400,"Invalid `pares`: {{message}}"

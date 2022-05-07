@@ -26,6 +26,7 @@ These status codes are used in [API responses](README.md#response).
 - [PAYMENT_RECEIVER_BLOCKED](#payment_receiver_blocked)
 - [PAYMENT_REJECTED_BY_ISSUER](#payment_rejected_by_issuer)
 - [PAYMENT_REJECTED](#payment_rejected)
+- [PAYMENT_METHOD_ERROR](#payment_method_error)
 - [TDSECURE_REQUIRED](#tdsecure_required)
 - [TDSECURE_FAILED](#tdsecure_failed)
 - [TDSECURE_PARES_INVALID](#tdsecure_pares_invalid)
@@ -196,6 +197,15 @@ The payment was rejected by the network. This may happen due to an increased ris
 
 HTTP status code: 400
 Message: The payment was rejected
+
+## `PAYMENT_METHOD_ERROR`
+
+An unexpected error happened at the underlying payment method. The state of the payment depends on the method used.
+
+Payment cards: No funds have been withdrawn, but an amount may have been reserved. The payment card holder will be able to remove the reservation by contacting their issuing bank. Only the issuing bank may remove such reservation.
+
+HTTP status code: 400
+Message: Unexpected payment method error
 
 ## `TDSECURE_REQUIRED`
 
