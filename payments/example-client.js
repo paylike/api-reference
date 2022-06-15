@@ -3,15 +3,15 @@ import createClient from 'https://esm.sh/@paylike/client@0.2.3'
 
 const client = createClient()
 
-const $iframes = new Set()
+const iframeChallenges = new Set()
 
 window.addEventListener('message', function (e) {
-	for (const $iframe of $iframes) {
-		if ($iframe.contentWindow !== e.source) continue
+	for (const challenge of iframeChallenges) {
+		if (challenge.$iframe.contentWindow !== e.source) continue
 		if (typeof e.data !== 'object' || e.data === null || !e.data.hints) {
 			continue
 		}
-		$iframe.resolve(e.data)
+		challenge.resolve(e.data)
 	}
 })
 
@@ -38,31 +38,59 @@ const payment = Promise.all([cardNumberToken, cardCodeToken]).then(
 			},
 			code: cardCodeToken,
 		},
+		// mobilepay: {
+		// 	configurationId: '00000000000000000000000000000000',
+		// 	logo:
+		// 		'https://app.paylike.io/apple-touch-icon-114x114-precomposed.png',
+		// 	returnUrl: location.href,
+		// },
 	})
 )
-payment.then((payment) => pay(payment)).then(console.log, console.error)
+payment
+	.then((payment) => pay(payment, retrieveHints()))
+	.then(console.log, console.error)
 
-const supportedChallenges = new Set(['fetch', 'iframe', 'background-iframe'])
+/*
+If implementing on the server-side, replace these functions with
+database-equivalents.
+*/
+function retrieveHints() {
+	const raw = localStorage.getItem('payment-hints')
+	console.log('Retrieved', raw)
+	return raw !== null ? JSON.parse(raw) : []
+}
+
+function saveHints(hints) {
+	console.log('Saving', hints)
+	return localStorage.setItem('payment-hints', JSON.stringify(hints))
+}
+
+function clearHints() {
+	return localStorage.removeItem('payment-hints')
+}
 
 function pay(payment, hints = []) {
+	saveHints(hints)
 	const response = client.payments.create(payment, hints)
 	const newHints = response.then((response) => {
 		if (!Array.isArray(response.challenges)) return []
-		const challenges = response.challenges.filter((c) =>
-			supportedChallenges.has(c.type)
-		)
-		if (challenges.length === 0) {
-			return Promise.reject(
-				new Error(
-					'Unable to process payment: required challenges not supported'
-				)
-			)
-		} else {
-			return performChallenge(payment, hints, challenges[0])
+		for (const challenge of response.challenges) {
+			const newHints = performChallenge(payment, hints, challenge)
+			if (newHints !== undefined) {
+				return newHints
+			}
 		}
+		return Promise.reject(
+			new Error(
+				`No supported challenges available: ${response.challenges
+					.map((c) => c.type)
+					.join(', ')}`
+			)
+		)
 	})
 	return Promise.all([response, newHints]).then(([response, newHints]) => {
 		if (response.authorizationId !== undefined) {
+			clearHints()
 			return response.authorizationId
 		} else {
 			return pay(payment, [...hints, ...newHints])
@@ -77,54 +105,83 @@ function performChallenge(payment, hints, challenge) {
 				.create(payment, hints, challenge.path)
 				.then((result) => result.hints)
 		}
+		case 'poll': {
+			const init = client.payments.create(payment, hints, challenge.path)
+			return init.then((init) => {
+				if (init.hints.length > 0) {
+					return init.hints
+				} else {
+					const delay = new Date(init.notBefore) - Date.now()
+					return new Promise((r) =>
+						setTimeout(() => r(init.hints), delay)
+					)
+				}
+			})
+		}
 		case 'iframe':
 		case 'background-iframe': {
 			const hidden = challenge.type === 'background-iframe'
 			const init = client.payments.create(payment, hints, challenge.path)
 			let timer
-			let $iframe
+			let iframeChallenge
 			const message = init.then(
 				(init) =>
 					new Promise((resolve) => {
-						const {action, fields = {}, timeout} = init
+						const {
+							url,
+							action,
+							method,
+							width,
+							height,
+							fields = {},
+							timeout,
+						} = init
 						timer =
 							timeout !== undefined &&
 							setTimeout(resolve, timeout)
 						const name = 'challenge-frame'
-						$iframe = ce('iframe', {
+						const $iframe = ce('iframe', {
+							src: method === 'GET' ? url : undefined,
 							name,
 							scrolling: 'auto',
 							style: {
 								border: 'none',
-								width: '390px',
-								height: '400px',
+								width: `${width ?? 1}px`,
+								height: `${height ?? 1}px`,
+								maxWidth: '100%',
 								display: hidden ? 'none' : 'block',
 							},
-							resolve,
 						})
-						const $form = ce(
-							'form',
-							{
-								method: 'POST',
-								action,
-								target: name,
-								style: {display: 'none'},
-							},
-							Object.entries(fields).map(([name, value]) =>
-								ce('input', {type: 'hidden', name, value})
+						const $ = ce('div', {className: 'modal', resolve}, [
+							$iframe,
+						])
+						iframeChallenge = {$, $iframe, resolve}
+						iframeChallenges.add(iframeChallenge)
+						document.body.appendChild($)
+
+						if (method === 'POST') {
+							const $form = ce(
+								'form',
+								{
+									method,
+									action,
+									target: name,
+									style: {display: 'none'},
+								},
+								Object.entries(fields).map(([name, value]) =>
+									ce('input', {type: 'hidden', name, value})
+								)
 							)
-						)
-						$iframes.add($iframe)
-						document.body.appendChild($iframe)
-						document.body.appendChild($form)
-						$form.submit()
-						document.body.removeChild($form)
+							document.body.appendChild($form)
+							$form.submit()
+							document.body.removeChild($form)
+						}
 					})
 			)
 			const cleaned = message.then(() => {
 				clearTimeout(timer)
-				$iframes.delete($iframe)
-				document.body.removeChild($iframe)
+				iframeChallenges.delete(iframeChallenge)
+				document.body.removeChild(iframeChallenge.$)
 			})
 			return Promise.all([init, message, cleaned]).then(
 				([init, message]) => {
@@ -135,8 +192,12 @@ function performChallenge(payment, hints, challenge) {
 				}
 			)
 		}
-		default: {
-			throw new Error(`Unsupported challenge type "${challenge.type}"`)
+		case 'redirect': {
+			const init = client.payments.create(payment, hints, challenge.path)
+			return init.then((init) => {
+				location.href = init.url
+				return init.hints
+			})
 		}
 	}
 }
