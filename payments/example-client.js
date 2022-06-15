@@ -9,12 +9,12 @@ const client = createClient({
 const $iframes = new Set()
 
 window.addEventListener('message', function (e) {
-	for (const $iframe of $iframes) {
-		if ($iframe.contentWindow !== e.source) continue
+	for (const challenge of iframeChallenges) {
+		if (challenge.$iframe.contentWindow !== e.source) continue
 		if (typeof e.data !== 'object' || e.data === null || !e.data.hints) {
 			continue
 		}
-		$iframe.resolve(e.data)
+		challenge.resolve(e.data)
 	}
 })
 
@@ -80,54 +80,83 @@ function performChallenge(payment, hints, challenge) {
 				.create(payment, hints, challenge.path)
 				.then((result) => result.hints)
 		}
+		case 'redirect': {
+			/*
+			Supporting redirects is usually reserved for
+			backend-implementations in which case the redirect itself should
+			happen in the frontend. For that reason, the "redirect" challenge
+			is not included above in `supportedChallenges`.
+			*/
+			const init = paylike.payments.create(payment, hints, challenge.path)
+			return init.then((init) => {
+				location.href = init.url
+				return init.hints
+			})
+		}
 		case 'iframe':
 		case 'background-iframe': {
 			const hidden = challenge.type === 'background-iframe'
-			const init = client.payments.create(payment, hints, challenge.path)
+			const init = paylike.payments.create(payment, hints, challenge.path)
 			let timer
-			let $iframe
+			let iframeChallenge
 			const message = init.then(
 				(init) =>
 					new Promise((resolve) => {
-						const {action, fields = {}, timeout} = init
+						const {
+							url,
+							action,
+							method,
+							width,
+							height,
+							fields = {},
+							timeout,
+						} = init
 						timer =
 							timeout !== undefined &&
 							setTimeout(resolve, timeout)
 						const name = 'challenge-frame'
-						$iframe = ce('iframe', {
+						const $iframe = ce('iframe', {
+							src: method === 'GET' ? url : undefined,
 							name,
 							scrolling: 'auto',
 							style: {
 								border: 'none',
-								width: '390px',
-								height: '400px',
+								width: `${width ?? 1}px`,
+								height: `${height ?? 1}px`,
+								maxWidth: '100%',
 								display: hidden ? 'none' : 'block',
 							},
-							resolve,
 						})
-						const $form = ce(
-							'form',
-							{
-								method: 'POST',
-								action,
-								target: name,
-								style: {display: 'none'},
-							},
-							Object.entries(fields).map(([name, value]) =>
-								ce('input', {type: 'hidden', name, value})
+						const $ = ce('div', {className: 'modal', resolve}, [
+							$iframe,
+						])
+						iframeChallenge = {$, $iframe, resolve}
+						iframeChallenges.add(iframeChallenge)
+						document.body.appendChild($)
+
+						if (method === 'POST') {
+							const $form = ce(
+								'form',
+								{
+									method,
+									action,
+									target: name,
+									style: {display: 'none'},
+								},
+								Object.entries(fields).map(([name, value]) =>
+									ce('input', {type: 'hidden', name, value})
+								)
 							)
-						)
-						$iframes.add($iframe)
-						document.body.appendChild($iframe)
-						document.body.appendChild($form)
-						$form.submit()
-						document.body.removeChild($form)
+							document.body.appendChild($form)
+							$form.submit()
+							document.body.removeChild($form)
+						}
 					})
 			)
 			const cleaned = message.then(() => {
 				clearTimeout(timer)
-				$iframes.delete($iframe)
-				document.body.removeChild($iframe)
+				iframeChallenges.delete(iframeChallenge)
+				document.body.removeChild(iframeChallenge.$)
 			})
 			return Promise.all([init, message, cleaned]).then(
 				([init, message]) => {
