@@ -47,6 +47,7 @@ POST https://b.paylike.io/payments
 
   amount: Money, // optional
 
+  // one of:
   card: {
       number: Token,
       expiry: {
@@ -55,6 +56,11 @@ POST https://b.paylike.io/payments
       },
       code: Token,
     },
+  },
+  // or
+  vipps: {
+    configurationId: String, // obtained from Paylike during Vipps signup
+    returnUrl: URL, // universal linking app-URL
   },
 
   // optional
@@ -176,6 +182,24 @@ For any payments series occuring in fixed intervals (e.g. monthly subscriptions)
 or predetermined rates (e.g. installments) use the `plan` field instead.
 
 This flag can be combined with `card.store.customer`.
+
+### `vipps`
+
+In order to accept payments through Vipps (Norwegian payment card-based payment
+method), please contact customer service to obtain a `configurationId`.
+
+We currently support only app-switch for Vipps. Vipps is not yet available for
+websites and requires a device with the Vipps app installed.
+
+#### `vipps.configurationId`
+
+As obtained from customer service.
+
+#### `vipps.returnUrl`
+
+The app-url to which the user should be redirected after confirming or declining
+a payment. This would usually be your app URL as registered with the OS (e.g.
+`myapp://page`).
 
 ### `custom`
 
@@ -412,6 +436,50 @@ existing `hints` (new hints last).
 
 The iframe should be removed after concluding or `timeout` milliseconds, and
 `/payment` requested again.
+
+### `poll`
+
+Fetch a path from the service and pause for an interval.
+
+The client should swap `/payments` for `path` and repeat its request (same
+request method and body).
+
+The response format is:
+
+```javascript
+{
+  notBefore: Date,
+  interval: Integer,
+  hints: Array,
+}
+```
+
+Concatenate the existing `hints` with the list from the response (new hints
+last).
+
+If `hints` is empty, do not continue until `notBefore` or after `interval`
+milliseconds have passed.
+
+### `app-switch`
+
+Redirect the user to a provided URL.
+
+The client should swap `/payments` for `path` and repeat its request (same
+request method and body).
+
+The response format is:
+
+```javascript
+{
+  url: URL,
+  hints: Array,
+}
+```
+
+Concatenate the existing `hints` with the list from the response (new hints
+last).
+
+Redirect the user to the URL provided in `url`.
 
 ### Example client (JavaScript)
 
