@@ -60,7 +60,7 @@ POST https://b.paylike.io/payments
   // or
   vipps: {
     configurationId: String, // obtained from Paylike during Vipps signup
-    redirectUrl: URL, // universal linking app-URL
+    returnUrl: URL, // universal linking app-URL
   },
 
   // optional
@@ -195,7 +195,7 @@ websites and requires a device with the Vipps app installed.
 
 As obtained from customer service.
 
-#### `vipps.redirectUrl`
+#### `vipps.returnUrl`
 
 The app-url to which the user should be redirected after confirming or declining
 a payment. This would usually be your app URL as registered with the OS (e.g.
