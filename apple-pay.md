@@ -1,5 +1,9 @@
 # Apple Pay
 
+In order to accept Apple Pay payments, please contact customer service to obtain
+a `configurationId` and an Apple payment processing certificate allowing us to
+decode your tokens.
+
 ## Tokenize
 
 Prepare (mandatory) an Apple Pay token for use elsewhere in the API.
