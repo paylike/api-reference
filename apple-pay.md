@@ -16,7 +16,7 @@ POST https://applepay.paylike.io/token
 {
     token: String,
 }
-// → Token
+// → Token (as obtained from Apple Pay on web or iOS)
 ```
 
 ### Status codes
