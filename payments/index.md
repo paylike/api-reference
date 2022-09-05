@@ -59,6 +59,12 @@ POST https://b.paylike.io/payments
   },
   // or
   applepay: Token,
+  // or
+  mobilepay: {
+    configurationId: String, // obtained from Paylike during MobilePay signup
+    logo: URL,
+    returnUrl: URL, // optional, return to this URL for redirect-based flows
+  },
 
   // optional
   custom,
@@ -184,6 +190,32 @@ This flag can be combined with `card.store.customer`.
 
 This field should be an Apple Pay token obtained from
 [the Apple Pay service](https://github.com/paylike/api-reference/blob/master/apple-pay.md).
+
+### `mobilepay`
+
+In order to accept payments through MobilePay (Danish payment card-based payment
+method), please contact customer service to obtain a `configurationId`.
+
+Both an iframe and redirect-based flow is supported. The specific flow is
+selected by prioritizing between challenges.
+
+#### `mobilepay.configurationId`
+
+As obtained from customer service. For test mode
+`00000000000000000000000000000000` can be used.
+
+#### `mobilepay.logo`
+
+Fully qualified HTTP(s) URL for a logo in PNG or JPG format of width 250px and
+height 250px.
+
+The maximum length is 1024 characters.
+
+#### `mobilepay.returnUrl`
+
+The URL to which the user should be redirected after confirming or declining a
+payment. For apps, this would be your app URL as registered with the OS (e.g.
+`myapp://page`), otherwise it is a URL for the specific order on your website.
 
 ### `custom`
 
@@ -398,7 +430,10 @@ The response format is:
 ```javascript
 {
   action: String,
-  fields: Object,
+  method: String, // the "method" to use
+  fields: Object, // relevant only for method POST
+  width: Number, // size in pixels
+  height: Number, // size in pixels
   timeout: Number, // optional, milliseconds
   hints: Array, // optional
 }
@@ -407,13 +442,14 @@ The response format is:
 If `hints` is present, concatenate with the existing `hints` (new hints last)
 for later requests.
 
-The client should create an HTML iframe element and submit an HTML "form" to it.
-The form should have the "action" attribute of `action` and the fields ("input"
-elements) with "name" and "value" pairs matching the keys and values from
-`fields`.
+The client should create an HTML iframe element of and submit an HTML "form" to
+it for `POST` or load a URL for `GET` method. The form should have the "action"
+attribute of `action` and the fields ("input" elements) with "name" and "value"
+pairs matching the keys and values from `fields`.
 
-If the type is not `background-iframe`, the size of the iframe should be at
-least 390x400 pixels. It is not advised to prevent scrolling the iframe.
+`width` and `height` is the recommended size of the iframe in pixels. They are
+not present for `background-iframe`. It is not advised to prevent scrolling the
+iframe.
 
 Once the iframe concludes it emits a "message" event of the format
 `{data: {hints: Array}}`. The client should set up a listener for this event on
@@ -422,6 +458,51 @@ existing `hints` (new hints last).
 
 The iframe should be removed after concluding or `timeout` milliseconds, and
 `/payment` requested again.
+
+#### `redirect`
+
+Fetch a path from the service.
+
+The client should swap `/payments` for `path` and repeat its request (same
+request method and body).
+
+The response format is:
+
+```javascript
+{
+  url: String,
+  hints: Array,
+}
+```
+
+Concatenate the existing `hints` with the list from the response (new hints
+last).
+
+Redirect the user to the URL in `url` (`e.g. location.href = url` in
+JavaScript).
+
+### `poll`
+
+Fetch a path from the service and pause for an interval.
+
+The client should swap `/payments` for `path` and repeat its request (same
+request method and body).
+
+The response format is:
+
+```javascript
+{
+  notBefore: Date,
+  interval: Integer,
+  hints: Array,
+}
+```
+
+Concatenate the existing `hints` with the list from the response (new hints
+last).
+
+If `hints` is empty, do not continue until `notBefore` or after `interval`
+milliseconds have passed.
 
 ### Example client (JavaScript)
 
