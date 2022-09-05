@@ -1,10 +1,7 @@
-'use strict'
+import createClient from 'https://esm.sh/@paylike/client@0.2.3'
+// import createClient from @paylike/client (Node.js)
 
-const createClient = require('@paylike/client')
-
-const client = createClient({
-	// fetch, // 'node-fetch' or similar fetch implementation if server-side
-})
+const client = createClient()
 
 const $iframes = new Set()
 
