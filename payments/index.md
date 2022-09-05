@@ -201,7 +201,8 @@ selected by prioritizing between challenges.
 
 #### `mobilepay.configurationId`
 
-As obtained from customer service.
+As obtained from customer service. For test mode
+`00000000000000000000000000000000` can be used.
 
 #### `mobilepay.logo`
 
