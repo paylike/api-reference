@@ -58,7 +58,7 @@ merchantSession
 ### Example
 
 ```javascript
-import Paylike from 'https://esm.sh/@paylike/client@0.2.3'
+import Paylike from 'https://esm.sh/@paylike/client@1.0.0'
 const paylike = Paylike()
 
 const session = new ApplePaySession(3, {

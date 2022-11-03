@@ -1,4 +1,4 @@
-import createClient from 'https://esm.sh/@paylike/client@0.2.3'
+import createClient from 'https://esm.sh/@paylike/client@1.0.0'
 // import createClient from @paylike/client (Node.js)
 
 const client = createClient()
