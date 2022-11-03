@@ -41,3 +41,9 @@ curl https://vault.paylike.io\
   --data '{"type": "pcn","value":"1234123412341234"}'
 # {"token":"TTSOxu13AhHPdaIIMGdeUToEQXy+Y/JviNGXDTXKyhJOWhVWbJ2W2L8EUh5k6LNKZAQCOaseXo27VgpJoug5upZSPJaFjHgjfq6bxPrlCeYBDtkCFIokleqPJTN7mco5/PwGJdyV/smuL7qmebY="}
 ```
+
+```js
+import Paylike from 'https://esm.sh/@paylike/client@1.0.0'
+const paylike = Paylike()
+paylike.tokenize('pcn', '1000100010001000').then(console.log, console.error)
+```
