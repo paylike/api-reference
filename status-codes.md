@@ -31,7 +31,6 @@ These status codes are used in [API responses](README.md#response).
 - [PAYMENT_METHOD_ERROR](#payment_method_error)
 - [TDSECURE_REQUIRED](#tdsecure_required)
 - [TDSECURE_FAILED](#tdsecure_failed)
-- [TDSECURE_PARES_INVALID](#tdsecure_pares_invalid)
 - [APPLEPAY_TOKEN_INVALID](#applepay_token_invalid)
 - [APPLEPAY_VALIDATION_URL_INVALID](#applepay_validation_url_invalid)
 - [APPLEPAY_CONFIGURATION_INVALID](#applepay_configuration_invalid)
@@ -236,13 +235,6 @@ Message: 3-D Secure is required but is not supported by the payment method at th
 
 HTTP status code: 400
 Message: 3-D Secure is required but failed. Please retry later.
-
-## `TDSECURE_PARES_INVALID`
-
-Invalid `pares`. The `message` property of the response body might carry an additional clue about why.
-
-HTTP status code: 400
-Message: Invalid `pares`: {{message}}
 
 ## `APPLEPAY_TOKEN_INVALID`
 
