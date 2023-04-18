@@ -13,8 +13,8 @@ notices and watch this repository for new features.
 Clients:
 
 - JavaScript
-  - https://www.npmjs.com/package/@paylike/client (high-level)
-  - https://www.npmjs.com/package/@paylike/request (low-level)
+  - https://github.com/paylike/js-client (high-level)
+  - https://github.com/paylike/js-request (low-level)
 
 Table of contents:
 
