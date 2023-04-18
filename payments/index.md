@@ -370,7 +370,6 @@ the native date type when formatted as JSON.
 - [PAYMENT_METHOD_ERROR](../status-codes.md#payment_method_error)
 - [TDSECURE_REQUIRED](../status-codes.md#tdsecure_required)
 - [TDSECURE_FAILED](../status-codes.md#tdsecure_failed)
-- [TDSECURE_PARES_INVALID](../status-codes.md#tdsecure_pares_invalid)
 - [PAYMENT_APPLEPAY_AMOUNT_MISMATCH](../status-codes.md#payment_applepay_amount_mismatch)
 - [PAYMENT_APPLEPAY_EXPIRED](../status-codes.md#payment_applepay_expired)
 
