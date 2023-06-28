@@ -19,7 +19,7 @@ Below is an excerpt from the payments object of [Payments](./index.md).
 
   source: {
     holder: 'destination',
-  }
+  },
   destination: {
     id: /[\x20-\x7E]{1,34}/,
     holder: {
