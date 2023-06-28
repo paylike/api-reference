@@ -18,8 +18,7 @@ If you are building a web payment form, check out these
   - [Examples](#examples-1)
 
 Create a new customer initiated payment order. A successful payment order
-returns an authorization to later capture the funds. A payment order by itself
-does not move funds.
+returns an authorization to later capture the funds.
 
 A payment order may be for a future payment such as in a "save card" scenario or
 a subscription. See the [payments plans](#payment-plans) section for further
@@ -64,6 +63,24 @@ POST https://b.paylike.io/payments
     configurationId: String, // obtained from Paylike during MobilePay signup
     logo: URL,
     returnUrl: URL, // optional, return to this URL for redirect-based flows
+  },
+
+  // optional
+  source: {
+    holder: 'destination', // optional
+  }
+  // optional
+  destination: {
+    id: String, // optional, length: 1..1024
+    // optional
+    holder: {
+      id: String, // optional, length: 1..1024
+      name: String, // optional, length: 1..1024
+      address: String, // optional, length: 1..1024
+      city: String, // optional, length: 1..1024
+      state: String, // optional, length: 1..1024
+      country: String, // optional, ISO 3166-1 alpha-2 code (e.g. US)
+    },
   },
 
   // optional
@@ -216,6 +233,38 @@ The maximum length is 1024 characters.
 The URL to which the user should be redirected after confirming or declining a
 payment. For apps, this would be your app URL as registered with the OS (e.g.
 `myapp://page`), otherwise it is a URL for the specific order on your website.
+
+### `source`
+
+Provide additional information on the account/funding source of the amount.
+
+#### `source.holder`
+
+Provide additional information about the holder of the account/funding source.
+
+Currently only the string `destination` is supported indicating that the holder
+is the same entity as that of the destination.
+
+### `destination`
+
+Provide additional information on the destination account for the amount.
+
+#### `destination.id`
+
+A unique identifier for the destination account for the amount. An example could
+be an IBAN or an internal wallet number.
+
+#### `destination.holder`
+
+Provide additional information about the holder of the destination account for
+the amount.
+
+##### `destination.holder.id`
+
+A unique identifier for the holder of the destination account for the amount.
+This could be an internal customer number.
+
+This property may be relevant for e.g. "top up/funding" payments.
 
 ### `custom`
 
