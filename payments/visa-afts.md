@@ -9,7 +9,8 @@ processed as Visa AFTs. This document lists the minimum requirements.
   wallet of such
 - The payment must include the data highlighted below in the specified format
 
-Below is an excerpt from the payments object of [Payments](./index.md).
+Below is an excerpt from the payments object of [Payments](./index.md), where
+additional information on each field is also available.
 
 ```javascript
 {
