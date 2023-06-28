@@ -38,3 +38,6 @@ Below is an excerpt from the payments object of [Payments](./index.md).
   // ...
 }
 ```
+
+The regular expression `[\x20-\x7E]` is that of
+[ASCII printable characters](https://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters).
