@@ -34,6 +34,7 @@ These status codes are used in [API responses](README.md#response).
 - [APPLEPAY_TOKEN_INVALID](#applepay_token_invalid)
 - [APPLEPAY_VALIDATION_URL_INVALID](#applepay_validation_url_invalid)
 - [APPLEPAY_CONFIGURATION_INVALID](#applepay_configuration_invalid)
+- [APPLEPAY_UNREGISTERED_APPLE_DOMAIN](#applepay_unregistered_apple_domain)
 - [GOOGLEPAY_TOKEN_INVALID](#googlepay_token_invalid)
 - [GOOGLEPAY_CONFIGURATION_INVALID](#googlepay_configuration_invalid)
 - [GOOGLEPAY_DECODING_ERROR](#googlepay_decoding_error)
@@ -255,6 +256,13 @@ Invalid configuration. The `message` property of the response body might carry a
 
 HTTP status code: 400
 Message: Invalid configuration: {{message}}
+
+## `APPLEPAY_UNREGISTERED_APPLE_DOMAIN`
+
+Domain not registered with Apple for merchant. This error is reported by Apple and should be corrected by updating the configuration with Apple or using Apple Pay from another domain already set up with Apple.
+
+HTTP status code: 400
+Message: The domain '{{domain}}' is not registered with Apple for Apple merchant '{{merchantId}}'.
 
 ## `GOOGLEPAY_TOKEN_INVALID`
 

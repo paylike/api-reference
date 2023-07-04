@@ -28,6 +28,7 @@ POST https://applepay.paylike.io/token
 - [REQUEST_INVALID](./status-codes.md#request_invalid)
 - [APPLEPAY_TOKEN_INVALID](./status-codes.md#applepay_token_invalid)
 - [APPLEPAY_CONFIGURATION_INVALID](./status-codes.md#applepay_configuration_invalid)
+- [APPLEPAY_UNREGISTERED_APPLE_DOMAIN](#applepay_unregistered_apple_domain)
 
 ## Approve payment session (Apple Pay on the Web)
 
