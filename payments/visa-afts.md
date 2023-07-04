@@ -30,7 +30,7 @@ additional information on each field is also available.
       city: /[\x20-\x7E]{1,25}/,
 
       // for country US or CA
-      state: String, // [A-Z]{2}
+      state: /[A-Z]{2}/,
 
       country: /[A-Z]{2}/, // ISO 3166-1 alpha-2 code (e.g. US)
     },
