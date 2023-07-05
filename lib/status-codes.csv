@@ -33,7 +33,7 @@ Payment cards: No funds have been withdrawn, but an amount may have been reserve
 "APPLEPAY_TOKEN_INVALID","Invalid `token`. The `message` property of the response body might carry an additional clue about why.",400,"Invalid token: {{message}}"
 "APPLEPAY_VALIDATION_URL_INVALID","Invalid `validationURL`.",400,
 "APPLEPAY_CONFIGURATION_INVALID","Invalid configuration. The `message` property of the response body might carry an additional clue about why.",400,"Invalid configuration: {{message}}"
-"APPLEPAY_UNREGISTERED_APPLE_DOMAIN","Domain not registered with Apple for merchant. This error is reported by Apple and should be corrected by updating the configuration with Apple or using Apple Pay from another domain already set up with Apple.",400,"The domain '{{domain}}' is not registered with Apple for Apple merchant '{{merchantId}}'."
+"APPLEPAY_UNREGISTERED_APPLE_DOMAIN","Domain not registered with Apple for merchant. This error is reported by Apple and should be corrected by updating the configuration with Apple or using Apple Pay from another domain already set up with Apple.",400,"The domain '{{domain}}' is not registered with Apple for Apple merchant '{{appleMerchantId}}'."
 "GOOGLEPAY_TOKEN_INVALID","Invalid `token`. The `message` property of the response body might carry an additional clue about why.",400,"Invalid token: {{message}}"
 "GOOGLEPAY_CONFIGURATION_INVALID","Invalid configuration. The `message` property of the response body might carry an additional clue about why.",400,"Invalid configuration: {{message}}"
 "GOOGLEPAY_DECODING_ERROR","Token decoding fails. The `message` property of the response body might carry an additional clue about why.",400,"Token decoding fails: {{message}}"

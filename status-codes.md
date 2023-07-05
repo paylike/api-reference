@@ -262,7 +262,7 @@ Message: Invalid configuration: {{message}}
 Domain not registered with Apple for merchant. This error is reported by Apple and should be corrected by updating the configuration with Apple or using Apple Pay from another domain already set up with Apple.
 
 HTTP status code: 400
-Message: The domain '{{domain}}' is not registered with Apple for Apple merchant '{{merchantId}}'.
+Message: The domain '{{domain}}' is not registered with Apple for Apple merchant '{{appleMerchantId}}'.
 
 ## `GOOGLEPAY_TOKEN_INVALID`
 
