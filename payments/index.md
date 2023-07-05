@@ -78,7 +78,7 @@ POST https://b.paylike.io/payments
       name: String, // optional, length: 1..1024
       address: String, // optional, length: 1..1024
       city: String, // optional, length: 1..1024
-      state: String, // optional, length: 1..1024
+      state: String, // optional, ISO 3166-2 code (second part only)
       country: String, // optional, ISO 3166-1 alpha-2 code (e.g. US)
     },
   },
