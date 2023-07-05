@@ -32,7 +32,6 @@ These status codes are used in [API responses](README.md#response).
 - [TDSECURE_REQUIRED](#tdsecure_required)
 - [TDSECURE_FAILED](#tdsecure_failed)
 - [APPLEPAY_TOKEN_INVALID](#applepay_token_invalid)
-- [APPLEPAY_VALIDATION_URL_INVALID](#applepay_validation_url_invalid)
 - [APPLEPAY_CONFIGURATION_INVALID](#applepay_configuration_invalid)
 - [APPLEPAY_UNREGISTERED_APPLE_DOMAIN](#applepay_unregistered_apple_domain)
 - [GOOGLEPAY_TOKEN_INVALID](#googlepay_token_invalid)
@@ -243,12 +242,6 @@ Invalid `token`. The `message` property of the response body might carry an addi
 
 HTTP status code: 400
 Message: Invalid token: {{message}}
-
-## `APPLEPAY_VALIDATION_URL_INVALID`
-
-Invalid `validationURL`.
-
-HTTP status code: 400
 
 ## `APPLEPAY_CONFIGURATION_INVALID`
 

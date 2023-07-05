@@ -53,7 +53,6 @@ merchantSession
 - [BODY_INVALID](./status-codes.md#body_invalid)
 - [REQUEST_INVALID](./status-codes.md#request_invalid)
 - [APPLEPAY_CONFIGURATION_INVALID](./status-codes.md#applepay_configuration_invalid)
-- [APPLEPAY_VALIDATION_URL_INVALID](./status-codes.md#applepay_validation_url_invalid)
 - [APPLEPAY_UNREGISTERED_APPLE_DOMAIN](./status-codes.md#applepay_unregistered_apple_domain)
 
 ### Example
