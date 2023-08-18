@@ -203,10 +203,16 @@ function performChallenge(payment, hints, challenge) {
 function ce(tag, opts = {}, $children = []) {
 	const {style = {}, ...attrs} = opts
 	const $ = document.createElement(tag)
-	Object.assign($, attrs)
-	Object.assign($.style, style)
+	Object.assign($, filterUndefinedValues(attrs))
+	Object.assign($.style, filterUndefinedValues(style))
 	for (const $child of $children) {
 		$.appendChild($child)
 	}
 	return $
+}
+
+function filterUndefinedValues(o) {
+	return Object.fromEntries(
+		Object.entries(o).filter(([, v]) => v !== undefined)
+	)
 }
