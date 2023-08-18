@@ -49,6 +49,7 @@ const payment = Promise.all([cardNumberToken, cardCodeToken]).then(
 payment
 	.then((payment) => pay(payment, retrieveHints()))
 	.then(console.log, console.error)
+	.finally(() => clearHints())
 
 /*
 If implementing on the server-side, replace these functions with
@@ -88,14 +89,11 @@ function pay(payment, hints = []) {
 			)
 		)
 	})
-	return Promise.all([response, newHints]).then(([response, newHints]) => {
-		if (response.authorizationId !== undefined) {
-			clearHints()
-			return response.authorizationId
-		} else {
-			return pay(payment, [...hints, ...newHints])
-		}
-	})
+	return Promise.all([response, newHints]).then(([response, newHints]) =>
+		response.authorizationId !== undefined
+			? response.authorizationId
+			: pay(payment, [...hints, ...newHints])
+	)
 }
 
 function performChallenge(payment, hints, challenge) {
