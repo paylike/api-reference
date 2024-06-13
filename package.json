@@ -2,7 +2,8 @@
 	"name": "@paylike/api-reference",
 	"version": "5.2.0",
 	"repository": "paylike/api-reference",
-	"main": "lib",
+	"type": "module",
+	"exports": "./lib/index.js",
 	"scripts": {
 		"build": "node lib/render-status-codes.js"
 	},
