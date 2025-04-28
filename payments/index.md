@@ -76,6 +76,7 @@ POST https://b.paylike.io/payments
     holder: {
       id: String, // optional, length: 1..1024
       name: String, // optional, length: 1..1024
+      dateOfBirth: String, // optional, YYYY-MM-DD (ISO 8601)
       address: String, // optional, length: 1..1024
       city: String, // optional, length: 1..1024
       state: String, // optional, ISO 3166-2 code (second part only)
