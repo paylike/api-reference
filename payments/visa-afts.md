@@ -26,7 +26,7 @@ additional information on each field is also available.
     holder: {
       id: /[\x20-\x7E]{1,16}/,
       name: /[\x20-\x7E]{2,30}/,
-      dateOfBirth: /[0-9]{4}-[0-9]{2}-[0-9]{2}/,
+      birthdate: /[0-9]{4}-[0-9]{2}-[0-9]{2}/,
       address: /[\x20-\x7E]{1,35}/,
       city: /[\x20-\x7E]{1,25}/,
 
